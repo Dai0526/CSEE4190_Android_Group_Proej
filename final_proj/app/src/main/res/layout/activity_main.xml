@@ -11,7 +11,9 @@
     tools:context="csee4190.final_proj.MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_height="match_parent"
+        android:text="No Result!"
+        android:layout_width="match_parent"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:id="@+id/showcase" />
 </RelativeLayout>
