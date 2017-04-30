@@ -19,8 +19,17 @@
         android:text="GO TO Weather"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="29dp"
+        android:id="@+id/weatherBtn"
         android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="Go To News"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/weatherBtn"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="150dp"
-        android:id="@+id/weatherBtn" />
+        android:layout_marginBottom="16dp"
+        android:id="@+id/news_btn" />
 </RelativeLayout>
