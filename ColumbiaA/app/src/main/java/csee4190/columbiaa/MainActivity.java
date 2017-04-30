@@ -42,6 +42,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private class QuoteActivityListener implements  View.OnClickListener{
 
+        @Override
+        public void onClick(View v) {
+            Intent myItent = new Intent(MainActivity.this,Quote.class);
+            startActivity(myItent);
+        }
+    }
 
 }
