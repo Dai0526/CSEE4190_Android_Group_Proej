@@ -32,4 +32,13 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="16dp"
         android:id="@+id/news_btn" />
+
+    <Button
+        android:id="@+id/quo_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/news_btn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="11dp"
+        android:text="Quote" />
 </RelativeLayout>
