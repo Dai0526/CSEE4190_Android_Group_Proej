@@ -24,6 +24,30 @@ import android.widget.Toast;
 
 public class Quote {
 
+    String _type;
+    String _author;
+    String _quote;
+
+    public Quote(){};
+
+    public Quote(String type, String author, String quote){
+        this._type = type;
+        this._author = author;
+        this._quote = quote;
+    }
+
+    public String get_type() {
+        return _type;
+    }
+
+    public String get_author() {
+        return _author;
+    }
+
+    public String get_quote() {
+        return _quote;
+    }
+
     public final List<String> readCsv(String FilePath) {
         List<String> quoteList = new ArrayList<String>();
 
