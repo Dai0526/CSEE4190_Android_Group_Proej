@@ -9,50 +9,164 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@drawable/weather_bg"
+    android:background="@drawable/weather_bg2"
     tools:context="csee4190.columbiaa.Weather">
+
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="320dp"
+        android:layout_height="40dp"
+        android:text="Conditions for New York, NY, US at 08:00 PM EDT"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:layout_marginTop="14dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:src="@drawable/yahoo"
+        android:id="@+id/imageView"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="31dp"
-        android:src="@drawable/yahoo" />
+        android:layout_centerHorizontal="true" />
 
 
     <TextView
-        android:text="@string/temperature"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/temperatureText"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:layout_below="@+id/weather_icon"
+        android:layout_width="115dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="68dp"
+        android:gravity="center"
+        android:text="@string/temperature"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_below="@+id/titleText"
         android:layout_centerHorizontal="true" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/weather_icon"
+        android:layout_width="220dp"
+        android:layout_height="120dp"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
         android:src="@drawable/na"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/temperatureText" />
+        android:layout_marginTop="28dp"
+        android:layout_marginStart="19dp"
+        android:layout_alignTop="@+id/titleText"
+        android:layout_alignStart="@+id/titleText" />
 
     <TextView
         android:text="@string/condition"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="17dp"
         android:id="@+id/conditionText"
-        android:layout_below="@+id/temperatureText"
-        android:layout_centerHorizontal="true" />
+        android:textColor="@color/white"
+        android:layout_marginTop="22dp"
+        android:layout_below="@+id/weather_icon"
+        android:layout_toEndOf="@+id/weather_icon" />
 
     <TextView
-        android:text="@string/location"
+        android:id="@+id/dateText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/locationText"
-        android:layout_below="@+id/conditionText"
-        android:layout_alignEnd="@+id/conditionText"
-        android:layout_marginTop="21dp" />
+        android:layout_marginTop="51dp"
+        android:text="Date"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_below="@+id/temperatureText"
+        android:layout_toStartOf="@+id/conditionText" />
+
+    <TextView
+        android:id="@+id/highTemText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_marginTop="60dp"
+        android:layout_below="@+id/forecast"
+        android:layout_toEndOf="@+id/forecast" />
+
+    <TextView
+        android:id="@+id/lowTempText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_alignBaseline="@+id/highTemText"
+        android:layout_alignBottom="@+id/highTemText"
+        android:layout_alignStart="@+id/weather_icon" />
+
+    <TextView
+        android:id="@+id/condTText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:text="TextView"
+        android:layout_alignBottom="@+id/lowTempText"
+        android:layout_toEndOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/forecast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/dateText"
+        android:layout_marginStart="11dp"
+        android:text="Forecast for :  "
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Low"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_alignBaseline="@+id/textView8"
+        android:layout_alignBottom="@+id/textView8"
+        android:layout_alignStart="@+id/lowTempText" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView6"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_alignStart="@+id/highTemText"
+        android:text="High" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/condTText"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_alignStart="@+id/condTText"
+        android:text="Condition" />
+
+    <TextView
+        android:id="@+id/swipeWeather"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toStartOf="@+id/titleText" />
+
 </RelativeLayout>

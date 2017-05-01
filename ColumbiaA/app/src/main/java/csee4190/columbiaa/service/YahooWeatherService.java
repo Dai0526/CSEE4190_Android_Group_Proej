@@ -3,6 +3,7 @@ package csee4190.columbiaa.service;
 import android.net.Uri;
 import android.os.AsyncTask;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -12,6 +13,7 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 
+import csee4190.columbiaa.data.Forecast;
 import csee4190.columbiaa.data.channel;
 
 public class YahooWeatherService {
@@ -79,6 +81,9 @@ public class YahooWeatherService {
 
                     channel ch=new channel();
                     ch.populate(q.optJSONObject("results").optJSONObject("channel"));
+
+
+
                     callback.serviceSuccess(ch);
 
 

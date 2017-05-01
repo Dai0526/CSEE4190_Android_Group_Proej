@@ -1,5 +1,7 @@
 package csee4190.columbiaa.data;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
@@ -10,7 +12,6 @@ public class channel implements JasonPopulator{
     private unit units;
     private item items;
 
-
     public unit getUnits() {
         return units;
     }
@@ -19,6 +20,8 @@ public class channel implements JasonPopulator{
         return items;
     }
 
+
+
     @Override
     public void populate(JSONObject data) {
         units=new unit();
@@ -26,7 +29,6 @@ public class channel implements JasonPopulator{
 
         items = new item();
         items.populate(data.optJSONObject("item"));
-
 
     }
 }
