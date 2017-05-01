@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
         btn_quo = (Button)findViewById(R.id.quo_btn);
         btn_quo.setOnClickListener(qu);
 
-        Log.d("Testing db with", "act");
     }
 
     private class WeatherActivityListener implements View.OnClickListener{
@@ -46,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             Intent myItent = new Intent(MainActivity.this,News.class);
+            Log.d("news","click news");
             startActivity(myItent);
         }
     }
@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             Intent myItent = new Intent(MainActivity.this,QuoteAct.class);
+            Log.d("quote","click quote");
             startActivity(myItent);
         }
     }
