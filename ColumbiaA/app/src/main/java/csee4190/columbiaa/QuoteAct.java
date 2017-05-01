@@ -1,5 +1,7 @@
 package csee4190.columbiaa;
 
+import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.support.v7.app.AppCompatActivity;
@@ -21,7 +23,8 @@ public class QuoteAct extends AppCompatActivity {
 
     private TextView quoteView;
     private TextView authView;
-
+    private TextView swipe;
+    Context context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +32,19 @@ public class QuoteAct extends AppCompatActivity {
         quoteView = (TextView)findViewById(R.id.quote_view);
         authView = (TextView)findViewById(R.id.authView);
         ArrayList<String> quoteList = new ArrayList<String>();
+
+        swipe = (TextView)findViewById(R.id.quoteSwipe);
+        swipe.setOnTouchListener(new OnSwipeTouchListener(context){
+            public void onSwipeLeft(){
+                Intent myItent = new Intent(QuoteAct.this, Weather.class);
+                startActivity(myItent);
+            }
+            public void onSwipeRight(){
+                Intent myItent = new Intent(QuoteAct.this, MainActivity.class);
+                startActivity(myItent);
+            }
+        });
+
         try {
 
             BufferedReader reader = new BufferedReader(new InputStreamReader(getAssets().open("quote.csv")));

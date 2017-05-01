@@ -65,7 +65,7 @@ public class Weather extends AppCompatActivity implements WeatherServiceCallback
                 startActivity(myItent);
             }
             public void onSwipeRight(){
-                Intent myItent = new Intent(Weather.this, MainActivity.class);
+                Intent myItent = new Intent(Weather.this, QuoteAct.class);
                 startActivity(myItent);
             }
         });

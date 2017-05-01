@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         swipe = (TextView)findViewById(R.id.swipeView);
         swipe.setOnTouchListener(new OnSwipeTouchListener(context){
             public void onSwipeLeft(){
-                Intent myItent = new Intent(MainActivity.this, Weather.class);
+                Intent myItent = new Intent(MainActivity.this, QuoteAct.class);
                 startActivity(myItent);
             }
             public void onSwipeRight(){
@@ -32,45 +32,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-<<<<<<< HEAD
-        QuoteActivityListener qu = new QuoteActivityListener();
-        btn_quo = (Button)findViewById(R.id.quo_btn);
-        btn_quo.setOnClickListener(qu);
 
     }
 
-    private class WeatherActivityListener implements View.OnClickListener{
-
-        @Override
-        public void onClick(View v) {
-            Intent myItent = new Intent(MainActivity.this, Weather.class);
-            startActivity(myItent);
-        }
-    }
-
-    private class NewsActivityListener implements  View.OnClickListener{
-
-        @Override
-        public void onClick(View v) {
-            Intent myItent = new Intent(MainActivity.this,News.class);
-            Log.d("news","click news");
-            startActivity(myItent);
-        }
-    }
-=======
-    }
-
-/*
->>>>>>> c474bd7c45b599118afa3f3fdef462d0f74536cd
-
-    private class QuoteActivityListener implements  View.OnClickListener{
-
-        @Override
-        public void onClick(View v) {
-            Intent myItent = new Intent(MainActivity.this,QuoteAct.class);
-            Log.d("quote","click quote");
-            startActivity(myItent);
-        }
-    }
-*/
 }
