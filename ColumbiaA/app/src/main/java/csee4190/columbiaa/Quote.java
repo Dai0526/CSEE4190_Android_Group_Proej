@@ -8,6 +8,7 @@ import android.widget.TextView;
 import java.io.IOException;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -52,14 +53,21 @@ public class Quote {
         HashMap<Date,String> hm_author=new HashMap<Date,String>();
         HashMap<Date,String> hm_quote=new HashMap<Date,String>();
         List<String> quoteList = readCsv("quote.csv");
+        Date temp_date = new Date();
+        Calendar c = Calendar.getInstance();
+
         for (int i = 0; i < (quoteList.size()/4); i=i+4) {
             String quoteID = quoteList.get(i);
             String category = quoteList.get(i+1);
             String author = quoteList.get(i+2);
             String quote = quoteList.get(i+3);
-            Date temp_date = new Date();
+
             hm_author.put(temp_date,author);
             hm_quote.put(temp_date,quote);
+
+            c.setTime(temp_date);
+            c.add(Calendar.DATE, 1);
+            temp_date = c.getTime();
         }
         quoteResult result = new quoteResult();
         result.author = hm_author;
