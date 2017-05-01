@@ -65,6 +65,8 @@ public class QuoteAct extends AppCompatActivity {
             Log.d("time",today.toString());
             String author = r.author.get(today_str);
             String quote = r.quote.get(today_str);
+            int l=quote.length();
+            quote=quote.substring(1,l-1);
             quoteView.setText(quote);
             authView.setText(author);
             //quoteView.setText(quoteList.get(3));
