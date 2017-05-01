@@ -13,21 +13,27 @@
     tools:context="csee4190.columbiaa.News">
 
     <TextView
-        android:text="Title"
+        android:id="@+id/titleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:id="@+id/titleText"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true" />
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="28dp"
+        android:text="Title"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
     <TextView
         android:text="Description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="18dp"
         android:id="@+id/despText"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:layout_below="@+id/au_text"
         android:layout_alignStart="@+id/au_text" />
@@ -38,7 +44,8 @@
         android:id="@+id/au_text"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         android:text="author"
-        android:layout_marginTop="23dp"
+        android:textColor="@color/white"
+        android:textSize="13sp"
         android:layout_below="@+id/titleText"
         android:layout_alignStart="@+id/titleText" />
 
@@ -52,4 +59,11 @@
         android:layout_marginTop="137dp"
         android:layout_below="@+id/despText"
         android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/swipeNews"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
 </RelativeLayout>

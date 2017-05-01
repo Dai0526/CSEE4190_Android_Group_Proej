@@ -11,25 +11,10 @@
     tools:context="csee4190.columbiaa.MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
-
-    <Button
-        android:text="GO TO Weather"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="29dp"
-        android:id="@+id/weatherBtn"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:text="Go To News"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/weatherBtn"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="16dp"
-        android:id="@+id/news_btn" />
+        android:id="@+id/swipeView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/weatherBtn" />
 </RelativeLayout>
