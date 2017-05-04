@@ -6,9 +6,10 @@ Our app is a light, convenient, integrated app (designed for New Yorkers current
 ## App Description
 Our app can be separated into three main parts besides the starting screen: the weather information from Yahoo API, the selected technology news from TechCrunch, and the quote of the day. We implemented a starting screen that includes our purpose “one is enough for a day” and a background picture of New York City. The starting screen is shown below.
 
+![alt text](https://github.com/Dai0526/CSEE4190_Android_Group_Proej/blob/master/1.png "Logo Title Text 1")
 ### Figure 1. Welcome Screen
 We implemented a left-right sliding function that allows the user to check the daily technology article, the quote of the day, or the weather information. By sliding left, the user can check the daily tech news, and by sliding right, the user can check the quote of the day. By further sliding, the user can check the weather information. The indication of how the sliding function works is shown below. The double-headed arrow means left-right sliding. 
-
+![alt text](https://github.com/Dai0526/CSEE4190_Android_Group_Proej/blob/master/2.png "Logo Title Text 1")
 ### Figure 2. Sliding Function
 
 By sliding the starting page to the right, our app will navigate to the daily technology article section. This part is the selected technology news from Techcrunch. TechCrunch is an online publisher of technology news. Their technology articles cover businesses ranging from startups to established firms. It is considered as the number one guide for all things tech. By using with newsapi.org’s free JSON API, 
@@ -22,11 +23,12 @@ desc=(TextView)findViewById(R.id.despText);
 img=(ImageView)findViewById(R.id.newsImg);
 Our user interface can be seen below.
 ```
-
-Figure 3. User Interface of Daily Technology News
+![alt text](https://github.com/Dai0526/CSEE4190_Android_Group_Proej/blob/master/3.png "Logo Title Text 1")
+### Figure 3. User Interface of Daily Technology News
 By further sliding the page to the right, we will see the weather information. The user interface of the weather section is shown below. 
 
-Figure 4. User Interface of Weather Information
+![alt text](https://github.com/Dai0526/CSEE4190_Android_Group_Proej/blob/master/4.png "Logo Title Text 1")
+### Figure 4. User Interface of Weather Information
 We can see both the weather information and an icon that indicates the weather. We used yahoo API and the following command to get the weather forecast information. 
 ```
 "Select * from weather.forecast where woeid in (select woeid from geo.places(1) where text=\"%s\")"
@@ -44,8 +46,8 @@ location = (TextView) findViewById(R.id.locationText);
 The blurred background is a picture of New York City’s sky. Since currently our app is designed for New Yorkers, so it will only show the weather of New York City area.
 
 By further sliding the page to the right, or sliding the starting page to the left, we will see the quote of the day. We collected more than 27000 inspiring quotes from the internet into our MySQL database and converted all the information into a csv file as shown below.
-
-Figure 5. Our csv File of Quotes
+![alt text](https://github.com/Dai0526/CSEE4190_Android_Group_Proej/blob/master/5.png "Logo Title Text 1")
+### Figure 5. Our csv File of Quotes
 Then we imported the csv file into our app. We used the following method to select one quote for each day and then displayed both the quote and author name in the quote of the day part using TextView.
 
 ```
@@ -78,7 +80,8 @@ for (int i = 0; i < (quoteList.size()/4); i=i+4) {
 
 Note that we chose a background picture of Columbia University’s Butler Library in this part to indicate our purpose of the inspiration and the user interface of the quote of the day part is shown below.
 
-Figure 6. User Interface of the Quote of the Day
+![alt text](https://github.com/Dai0526/CSEE4190_Android_Group_Proej/blob/master/6.png "Logo Title Text 1")
+### Figure 6. User Interface of the Quote of the Day
 
 Future Work
 Since currently our app is designed for New Yorkers so it has limited functions like the weather information and background pictures are all related to New York City only. In the future, we want to implement this app into a global app. We want to make the background pictures to automatically change depending on the user’s location. For the weather section, we can add more detailed information such as weather forecast and search by location function to meet more users’ requirements. We also want to implement some user preference settings to make the app more personalized. For the technology news part, we are thinking of adding more sources for the daily technology news instead of just getting news from one source. Also, by implementing certain selection algorithm and adding news filter options, we might able to display different articles to each different user depending on their interests.
