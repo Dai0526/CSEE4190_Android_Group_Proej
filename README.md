@@ -15,32 +15,41 @@ By sliding the starting page to the right, our app will navigate to the daily te
 https://newsapi.org/v1/articles?source=techcrunch&apiKey=642658eb4ebf432aaee64b1bc62913c1
 we could get live headlines, images, and selected article metadata from TechCrunch. We created author, title, and description TextViews, and ImageView for the news to display the daily technology news on our user interface.
 
-```au=(TextView)findViewById(R.id.au_text);
+```
+au=(TextView)findViewById(R.id.au_text);
 title=(TextView)findViewById(R.id.titleText);
 desc=(TextView)findViewById(R.id.despText);
 img=(ImageView)findViewById(R.id.newsImg);
-Our user interface can be seen below.```
+Our user interface can be seen below.
+```
 
 Figure 3. User Interface of Daily Technology News
 By further sliding the page to the right, we will see the weather information. The user interface of the weather section is shown below. 
 
 Figure 4. User Interface of Weather Information
 We can see both the weather information and an icon that indicates the weather. We used yahoo API and the following command to get the weather forecast information. 
+```
 "Select * from weather.forecast where woeid in (select woeid from geo.places(1) where text=\"%s\")"
+```
+
 The icons of the weather condition areobtained from the internet. By creating weather icon ImageView and several weather information Textview, we were able to display both the icon of the current weather and the weather information such as temperature, weather condition, date, daily high and daily low in our user interface. 
+
+```
 weatherIcon = (ImageView)findViewById(R.id.weather_icon);
 temperature = (TextView) findViewById(R.id.temperatureText);
 condition = (TextView) findViewById(R.id.conditionText);
 location = (TextView) findViewById(R.id.locationText);
-The blurred background is a picture of New York City’s sky. Since currently our app is designed for New Yorkers, so it will only show the weather of New York City area.
+```
 
+The blurred background is a picture of New York City’s sky. Since currently our app is designed for New Yorkers, so it will only show the weather of New York City area.
 
 By further sliding the page to the right, or sliding the starting page to the left, we will see the quote of the day. We collected more than 27000 inspiring quotes from the internet into our MySQL database and converted all the information into a csv file as shown below.
 
 Figure 5. Our csv File of Quotes
 Then we imported the csv file into our app. We used the following method to select one quote for each day and then displayed both the quote and author name in the quote of the day part using TextView.
 
-```HashMap<String,String> hm_author=new HashMap<String,String>();
+```
+HashMap<String,String> hm_author=new HashMap<String,String>();
 HashMap<String,String> hm_quote=new HashMap<String,String>();
 Calendar c = Calendar.getInstance();
 c.set(Calendar.YEAR, 2017);
@@ -64,7 +73,8 @@ for (int i = 0; i < (quoteList.size()/4); i=i+4) {
     c.setTime(temp_date);
     c.add(Calendar.DATE, 1);
     temp_date = c.getTime();
-}```
+}
+```
 
 Note that we chose a background picture of Columbia University’s Butler Library in this part to indicate our purpose of the inspiration and the user interface of the quote of the day part is shown below.
 
